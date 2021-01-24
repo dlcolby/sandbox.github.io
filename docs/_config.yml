@@ -32,8 +32,31 @@ github_username:  jekyll
 # Build settings
 remote_theme: "Microchip-MPLAB-Harmony/just-the-docs@mchp-harmony"
 #theme: "just-the-docs"
+# GH Pages default (to ensure local build is same)
+lsi: false
+safe: true
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+markdown: kramdown
+
 plugins:
   - jekyll-feed
+  - jekyll-coffeescript                # GH Pages default (to ensure local build is same)
+  - jekyll-default-layout
+  - jekyll-gist
+  - jekyll-github-metadata
+  - jekyll-optional-front-matter
+  - jekyll-paginate
+  - jekyll-readme-index
+  - jekyll-titles-from-headings
+  - jekyll-relative-links
+  - jekyll-seo-tag                     # MCHP
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -54,3 +77,48 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+#
+# ------------ Theme configuration ------------
+#
+
+# Enable or disable the site search
+search_enabled: true
+
+# Set the search token separator for hyphenated-word search:
+search_tokenizer_separator: /[\s/]+/
+
+# Enable or disable heading anchors
+heading_anchors: true
+
+# Google Analytics Tracking (optional)
+ga_tracking: UA-2724382-16
+
+exclude:
+  - "*.xml"
+  - "*.py"
+  - "*.ftl"
+  - "*.c"
+  - "*.h"
+  - "*.X"
+  - "*.IAR"
+  - "Gem*"
+  - "*.S"
+  - "*.ld"
+  - "*.jar"
+  - "*.prj"
+  - vendor
+
+# Aux links for the upper right navigation
+aux_links:
+#  "See me on GitHub":
+#  "{% octicon mark-github %}":
+#    - "//github.com/Microchip-MPLAB-Harmony/aerospace"
+  "Obtain Support from Microchip":
+    - "https://support.microchip.com"
+
+# Set a path/url to a logo that will be displayed instead of the title
+logo: "/assets/images/vendor/microchip_mplab_harmony_logo_150_transparent.png"
+
+# Footer content appears at the bottom of every page's main content
+footer_content: "<img src='https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png' /><br />Copyright &copy; 2020 Microchip Technology."
